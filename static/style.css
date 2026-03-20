@@ -79,3 +79,8 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.delete-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+}
