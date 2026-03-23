@@ -32,7 +32,7 @@ form {
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 form div {
@@ -79,12 +79,18 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* Post Actions */
 .post-actions {
-    display: flex;           /* Container wird flexibel */
-    gap: 10px;               /* Abstand zwischen den Buttons */
+    display: flex;               /* Buttons horizontal nebeneinander */
+    justify-content: flex-start;     /* Zentriert die Buttons */
+    align-items: center;         /* Vertikal zentriert */
+    gap: 10px;                   /* Abstand zwischen den Buttons */
+    margin-top: 10px;
 }
 
-.update-btn, .delete-btn {
+.update-btn,
+.delete-btn {
     padding: 5px 12px;
     font-size: 0.7rem;
     border: none;
@@ -108,4 +114,18 @@ a:hover {
 
 .delete-btn:hover {
     background-color: #c0392b;
+}
+
+.heart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: gray;
+    padding: 0;                  /* kompakt */
+    outline: none;
+}
+
+.heart-btn.active {
+    color: red;
 }

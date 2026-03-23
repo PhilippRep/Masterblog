@@ -26,7 +26,8 @@ def add():
             "id": new_id,
             "author": author,
             "title": title,
-            "content": content
+            "content": content,
+            "liked": False
         }
         blog_posts.append(new_post)
         with open("static/blog.json", "w", encoding="utf-8") as f:
@@ -78,6 +79,26 @@ def update(post_id):
         # Redirect back to index
         return redirect(url_for('index'))
     return render_template('update.html', post=post)
+
+@app.route('/like_post/<int:post_id>', methods=['POST'])
+def like_post(post_id):
+    # Fetch the blog posts from the JSON file
+    post = fetch_post_by_id(post_id)
+    if post is None:
+        # Post not found
+        return "Post not found", 404
+    if request.method == 'POST':
+        # Update the post in the JSON file
+        with open("static/blog.json", "r", encoding="utf-8") as f:
+            blog_posts = json.load(f)
+        for blog in blog_posts:
+            if int(blog['id'] ) == post_id:
+                blog['liked'] = not blog.get('liked', False)
+                break
+        with open("static/blog.json", "w", encoding="utf-8") as f:
+               json.dump(blog_posts, f, ensure_ascii=False, indent=4)
+        # Redirect back to index
+        return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
