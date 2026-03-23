@@ -4,20 +4,23 @@
         "author": "Rene. N",
         "title": "My first post",
         "content": "Can`t believe it",
-        "liked": false
+        "liked": false,
+        "likes": 0
     },
     {
         "id": 2,
         "author": "Andre. S",
         "title": "Der Kuchen",
         "content": "Der Kuchen war schmackhaft. ",
-        "liked": false
+        "liked": false,
+        "likes": 0
     },
     {
         "id": 3,
         "author": "REALLY",
         "title": "Claudia",
         "content": "The was amazing. ",
-        "liked": false
+        "liked": false,
+        "likes": 0
     }
 ]

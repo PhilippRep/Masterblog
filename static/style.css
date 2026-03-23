@@ -129,3 +129,9 @@ a:hover {
 .heart-btn.active {
     color: red;
 }
+.like-count {
+    font-size: 0.9rem;
+    color: #333;
+    min-width: 20px; /* verhindert, dass die Zahl springt */
+    text-align: left;
+}

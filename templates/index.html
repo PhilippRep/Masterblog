@@ -19,7 +19,8 @@
             <form action="{{ url_for('delete', post_id=blog['id']) }}" method="POST">
                 <button type="submit" class="delete-btn">Delete Post</button></form>
             <form action="{{ url_for('like_post', post_id=blog['id']) }}" method="POST" style="display:inline;">
-                <button type="submit" class="heart-btn {% if blog.liked %}active{% endif %}">&#10084;</button></form>
+                <button type="submit" class="heart-btn {% if blog.liked %}active{% endif %}">&#10084;</button>
+                <span class="like-count">{{ blog.get('likes', 0) }}</span></form>
             </div>
         {% endfor %}
     </div>
