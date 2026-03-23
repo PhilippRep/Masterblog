@@ -39,7 +39,7 @@ def delete(post_id):
     # Find the blog post with the given id and remove it from the list
     with open("static/blog.json", "r", encoding="utf-8") as f:
         blog_posts = json.load(f)
-    updated_blog = [post for post in blog_posts if post.get('id') != post_id]
+    updated_blog = [post for post in blog_posts if int(post.get('id')) != post_id]
     with open("static/blog.json", "w", encoding="utf-8") as f:
         json.dump(updated_blog, f, ensure_ascii=False, indent=4)
     # Redirect back to the home page
@@ -49,7 +49,7 @@ def fetch_post_by_id(post_id):
     with open("static/blog.json", "r", encoding="utf-8") as f:
         blog_posts = json.load(f)
     for post in blog_posts:
-        if post.get('id') == post_id:
+        if int(post.get('id')) == post_id:
             return post
     return None
 
@@ -66,15 +66,14 @@ def update(post_id):
         with open("static/blog.json", "r", encoding="utf-8") as f:
             blog_posts = json.load(f)
         for blog in blog_posts:
-            if blog['id'] == post_id:
+            if int(blog['id'] ) == post_id:
                 blog['author'] = request.form.get('author')
                 blog['title'] = request.form.get('title')
                 blog['content'] = request.form.get('content')
                 break
 
-
         with open("static/blog.json", "w", encoding="utf-8") as f:
-           json.dump(blog_posts, f, ensure_ascii=False, indent=4)
+               json.dump(blog_posts, f, ensure_ascii=False, indent=4)
 
         # Redirect back to index
         return redirect(url_for('index'))

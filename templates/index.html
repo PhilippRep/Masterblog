@@ -14,10 +14,10 @@
             <p><em>Written by: {{blog["author"]}}</em></p>
             <p>Post content: {{blog["content"]}}</p>
         <div class="post-actions">
-
+            <form action="{{ url_for('update', post_id=blog['id']) }}" method="get" style="display:inline;">
+                <button type="submit" class="update-btn">Update</button></form>
             <form action="{{ url_for('delete', post_id=blog['id']) }}" method="POST">
-            <button type="submit" class="delete-btn">Delete Post</button>
-            </form>
+                <button type="submit" class="delete-btn">Delete Post</button></form>
         </div>
         {% endfor %}
     </div>

@@ -1,14 +1,20 @@
 [
     {
         "id": 1,
-        "author": "John Doe",
-        "title": "First Post",
-        "content": "This is my first post."
+        "author": "Rene. N",
+        "title": "My first post",
+        "content": "Can`t believe it"
     },
     {
         "id": 2,
-        "author": "Jane Doe",
-        "title": "Second Post",
-        "content": "This is another post."
+        "author": "Andre. S",
+        "title": "Der Kuchen",
+        "content": "Der Kuchen war schmackhaft. "
+    },
+    {
+        "id": 3,
+        "author": "REALLY",
+        "title": "Claudia",
+        "content": "The was amazing. "
     }
 ]

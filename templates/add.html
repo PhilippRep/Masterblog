@@ -14,22 +14,18 @@
             <label for="title">Post Title:</label>
             <input type="text" id="title" name="title" required>
         </div>
-
         <div>
             <label for="author">Author Name:</label>
             <input type="text" id="author" name="author" required>
         </div>
-
         <div>
             <label for="content">Content:</label>
             <textarea id="content" name="content" rows="6" required></textarea>
         </div>
-
         <div>
             <button type="submit">Add Post</button>
         </div>
     </form>
-
     <p><a href="{{ url_for('index') }}">Back to Blog</a></p>
 </body>
 </html>
