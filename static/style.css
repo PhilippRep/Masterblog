@@ -29,7 +29,7 @@ h1 {
 /* Form Styling */
 form {
     background-color: #ffffff;
-    padding: 25px;
+    padding: 10px;
     border-radius: 10px;
     border: 1px solid #e0e0e0;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
@@ -79,8 +79,33 @@ a {
 a:hover {
     text-decoration: underline;
 }
+.post-actions {
+    display: flex;           /* Container wird flexibel */
+    gap: 10px;               /* Abstand zwischen den Buttons */
+}
+
+.update-btn, .delete-btn {
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #2980b9;
+}
 
 .delete-btn {
-    font-size: 12px;
-    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
 }
